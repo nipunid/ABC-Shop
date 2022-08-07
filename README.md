@@ -63,3 +63,39 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # ABC-Shop
+
+## Installation
+### 1. Installation backend dependencies
+```
+$ cd abc-app
+$ composer install
+```
+
+### 2. Edit configuration files.
+```
+cp .env.example .env
+```
+
+### 3. Database setup and insert fake data
+```
+$ php artisan migrate:fresh --seed
+```
+
+### 4. Generate an application key
+```
+$ php artisan key:generate
+```
+
+### 5. Serve the project
+```
+$ php artisan serve
+```
+
+## Note
+#### If the front design does not load properly, please run
+```
+$ npm install
+$ npm run dev
+```
+
+
