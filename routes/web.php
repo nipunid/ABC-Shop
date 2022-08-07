@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +25,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('product-list',[ProductController::class,'index']);
+//Route::get('product-list',[ProductController::class,'index']);
+//Route::get('catergories',[Catergorycontroller::class,'index']);

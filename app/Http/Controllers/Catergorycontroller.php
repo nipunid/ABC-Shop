@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Database\Queryexception;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\validator;
 use App\Models\Catergory;
 
@@ -11,7 +11,7 @@ class Catergorycontroller extends Controller
 {
     public function index()
     {
-        $catergories = Category::all();
+        $catergories = Catergory::all();
         return view('catergories');
     }
 
@@ -27,16 +27,16 @@ class Catergorycontroller extends Controller
        ]);
    
        if($validator->fails()){
-           return redirect('/category')
+           return redirect('/catergory')
                        ->withErrors($validator)
                        ->withInput();
        }
        try{
-           $category = Category::create([
+           $category = Catergory::create([
                "CategoryName" => $request->categoryName
            ]);
-           return redirect('/category');
-       }catch(Queryexception $error){
+           return redirect('/catergory');
+       }catch(QueryException $error){
            error_log($error->getMessage());
           // handle error from cient side
        }
